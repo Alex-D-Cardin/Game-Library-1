@@ -6,24 +6,42 @@
 
 import pickle
 
+games = {1:['FPS', 'Halo3', 'Bungee', 'Microsoft', 'Xbox360', '2007', '10', 'either', '30.00', 'yes', '1/15/2008', 'This game blows chunks'],
+         2:['crumbs'],
+         3:['finger', 'farts']}
+
 def add_edit_game():
     print("Editted game")
     
 def print_all_games():
-    print("Displayed all games")
+    print(games)
     
 def search_by_title():
-    print("Searched by title")
+    print("Searched by title!")
     
 def remove_game():
-    print("Removed game")
+    print("Removed game!")
     
 def save_database():
-    print("Saved database")
+    #print("Saved database!")
+    gamefile = open("game_lib.pickle", "wb")
+    pickle.dump(games, gamefile)
+    gamefile.close()    
+    
+def reset_pickle_file():
+    #print("File reset!")
+    games = {}
+    gamefile = open("game_lib.pickle", "wb")
+    pickle.dump(games, gamefile)
+    gamefile.close()    
     
 def quit():
     print("Data Saved. BBBYYYYYYYEEEEEEEEEEEE")
     exit()    
+
+gamefile = open("game_lib.pickle", "wb")
+pickle.dump(games, gamefile)
+gamefile.close()
 
 while True:
     print("""
@@ -35,6 +53,7 @@ while True:
         3) Search By Title
         4) Remove a Game
         5) Save Database
+        6) Reset File
         
         Q) Quit
         """)
@@ -52,6 +71,9 @@ while True:
         
     elif choice == "5":
         save_database()
+        
+    elif choice == "6":
+        reset_pickle_file()
             
     elif choice == "Q" or choice == "q":
         quit()
