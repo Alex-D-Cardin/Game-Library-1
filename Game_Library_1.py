@@ -7,14 +7,28 @@
 import pickle
 
 games = {1:['FPS', 'Halo3', 'Bungee', 'Microsoft', 'Xbox360', '2007', '10', 'either', '30.00', 'yes', '1/15/2008', 'This game blows chunks'],
-         2:['crumbs'],
-         3:['finger', 'farts']}
+         2:['crumbs', '', '', '', '', '', '', '', '', '', '', ''],
+         3:['finger', 'farts', '', '', '', '', '', '', '', '', '', '']}
 
 def add_edit_game():
     print("Editted game")
     
 def print_all_games():
-    print(games)
+    for key in games:
+        print("--------------------------------------------")
+        print("Title:\t\t", games[key][1])
+        print("Genre:\t\t", games[key][0])
+        print("Developer:\t", games[key][2])
+        print("Publisher:\t", games[key][3])
+        print("Console:\t", games[key][4])
+        print("Release:\t", games[key][5])
+        print("Rating:\t\t", games[key][6])
+        print("Players:\t", games[key][7])
+        print("Price:\t\t", games[key][8])
+        print("Have Played:\t", games[key][9])
+        print("Date Bought:\t", games[key][10])
+        print("Notes:\t\t", games[key][11])
+        print("-----------------------------------------------")
     
 def search_by_title():
     print("Searched by title!")
