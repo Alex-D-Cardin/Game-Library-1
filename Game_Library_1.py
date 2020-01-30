@@ -47,10 +47,15 @@ def add():
         games[new_key] = entry.append()
     
 def edit():
-    for keys in games:
-        edit_entry = []
+    print("Here is the library: ")
+    for keys in games.keys():
+        print(key, "-", games[key][1]
+    
+    edit_key = int(input("Which game do you want to change? "))
+    edit_entry = []
+    
         valid = False
-        
+            
         while not valid:
             genre = input("Enter Genre: ")
             edit_entry.append(genre)
@@ -76,6 +81,8 @@ def edit():
             edit_entry.append(date_bought)
             notes = input("Enter Notes: ")
             edit_entry.append(notes)    
+            
+            
             
             answer = input("Is this correct? ")
             if answer.capitalize() in ("yes", "y"):
