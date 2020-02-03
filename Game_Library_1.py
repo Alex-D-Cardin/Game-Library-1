@@ -49,45 +49,45 @@ def add():
 def edit():
     print("Here is the library: ")
     for keys in games.keys():
-        print(key, "-", games[key][1]
+        print(key, "-", games[key][1])
     
     edit_key = int(input("Which game do you want to change? "))
     edit_entry = []
     
-        valid = False
+    valid = False
             
-        while not valid:
-            genre = input("Enter Genre: ")
-            edit_entry.append(genre)
-            title = input("Enter Title: ")
-            edit_entry.append(title)
-            developer = input("Enter Developer: ")
-            edit_entry.append(developer)
-            publisher = input("Enter Publisher: ")
-            edit_entry.append(publisher)
-            console = input("Enter Console: ")
-            edit_entry.append(console)
-            release_date = input("Enter Release Date: ")
-            edit_entry.append(release_date)
-            rating = input("Enter Rating: ")
-            edit_entry.append(rating)
-            players = input("Enter multi/singleplayer: ")
-            edit_entry.append(players)
-            price = input("Enter Price: ")
-            edit_entry.append(price)
-            play_status = input("Enter Play Status: ")
-            edit_entry.append(play_status)
-            date_bought = input("Enter Date Bought: ")
-            edit_entry.append(date_bought)
-            notes = input("Enter Notes: ")
-            edit_entry.append(notes)    
+    while not valid:
+        genre = input("Enter Genre: ")
+        edit_entry.append(genre)
+        title = input("Enter Title: ")
+        edit_entry.append(title)
+        developer = input("Enter Developer: ")
+        edit_entry.append(developer)
+        publisher = input("Enter Publisher: ")
+        edit_entry.append(publisher)
+        console = input("Enter Console: ")
+        edit_entry.append(console)
+        release_date = input("Enter Release Date: ")
+        edit_entry.append(release_date)
+        rating = input("Enter Rating: ")
+        edit_entry.append(rating)
+        players = input("Enter multi/singleplayer: ")
+        edit_entry.append(players)
+        price = input("Enter Price: ")
+        edit_entry.append(price)
+        play_status = input("Enter Play Status: ")
+        edit_entry.append(play_status)
+        date_bought = input("Enter Date Bought: ")
+        edit_entry.append(date_bought)
+        notes = input("Enter Notes: ")
+        edit_entry.append(notes)    
             
             
             
-            answer = input("Is this correct? ")
-            if answer.capitalize() in ("yes", "y"):
-                valid = True
-            games[edit_key] = entry.append()        
+        answer = input("Is this correct? ")
+        if answer.capitalize() in ("yes", "y"):
+            valid = True
+        games[edit_key] = entry.append()        
     
 def print_all_games():
     for key in games:
@@ -121,6 +121,20 @@ def search_by_title():
 def remove_game():
     print("Removed game!")
     
+    print("Here is the library: ")
+    for keys in games.keys():
+        print(keys, "-", games[keys])
+    
+    remove_key = input("Which game do you want to remove? ")
+    remove_key = int(remove_key)
+
+    if keys in games:
+        print(keys, ":", games[remove_key][1] +", removed.\n")  
+        games.pop(remove_key)
+  
+        
+        
+        
 def save_database():
     #print("Saved database!")
     gamefile = open("game_lib.pickle", "wb")
